@@ -4,6 +4,7 @@ class Morty < ApplicationRecord
    STATE = ["hurt","relaxed","depressed","angry"]
 
   belongs_to :user
+  has_many :reservations
   validates :name, presence: true
   validates :price, presence: true
   validates :photo, presence: true
