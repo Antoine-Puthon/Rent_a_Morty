@@ -6,6 +6,7 @@ class MortiesController < ApplicationController
 
   def create
     @morty = Morty.new(morty_params)
+    @morty.user = current_user
     if @morty.save
       redirect_to morty_path(@morty)
     else
