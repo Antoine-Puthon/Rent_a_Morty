@@ -1,0 +1,23 @@
+<h2 class="text-center">Share your <strong id="red-word">Morty</strong> with the community. Don't <strong id="red-word">be</strong> a <strong id="red-word">jerk</strong> ! </h2>
+
+<div class="container">
+  <div class="text-left form-login">
+    <h2 class="text-center"><strong>Add my Morty </strong></h2>
+    <br>
+    <%= simple_form_for @morty do |f| %>
+    <%= f.input :name, placeholder: "Robot Morty" %>
+    <%= f.input :price, label: "My lovely Morty is this much", placeholder: "36 Dollars" %>
+    <%= f.input :description, placeholder: "Well designed Morty" %>
+    <%= f.input :state, label: "Choose between hurt relaxed depressed and angry", placeholder: "Angry" , collection: Morty::STATE  %>
+    <%= f.input :rarity, label: "Choose between commun rare and epic", placeholder: "Epic" , collection: Morty::RARITY %>
+    <br>
+    <%= f.input :photo, label: "Choose a nice picture for your Morty" %>
+    <br>
+    <hr>
+
+    <%= f.button :submit, "Share my Morty", class: "btn btn-danger btn-lg"%>
+
+    <% end %>
+  </div>
+</div>
+
