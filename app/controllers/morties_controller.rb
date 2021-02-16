@@ -27,6 +27,11 @@ class MortiesController < ApplicationController
     redirect_to morty_path(@morty)
   end
 
+  def index
+    raise
+    @morty = Morty.all
+  end
+
   private
 
   def morty_params
