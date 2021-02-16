@@ -1,0 +1,7 @@
+<h3>Edit your review</h3>
+
+<%= simple_form_for @review do |f| %>
+    <%= f.input :content, placeholder: "Tell us why your experience was great", label: false, :class => "form-field" %>
+    <%= f.input :rating, placeholder: "Give a rating between 1(min) and 5(max) to your experience", label:false, :class => "form-field", required: true %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
