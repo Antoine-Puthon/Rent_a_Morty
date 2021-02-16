@@ -14,7 +14,7 @@ before_action :set_review, only: [ :edit, :update ]
   def create
     @review = Review.new(review_params)
     @review.user = current_user
-    @review.morty = Morty.find(params[:camp_id])
+    @review.morty = Morty.find(params[:morty_id])
     @morty = @review.morty
     if @review.save
         redirect_to morty_path(@morty)
@@ -23,25 +23,6 @@ before_action :set_review, only: [ :edit, :update ]
     end
   end
 
-  def edit
-  end
-
-  def update
-    @review.update(review_params)
-    if @review.save
-      redirect_to user_path(@review.user)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @review = Review.find(params[:id])
-    @review.destroy
-    redirect_to :back
-  end
-
-
   private
 
   def review_params
@@ -49,7 +30,7 @@ before_action :set_review, only: [ :edit, :update ]
   end
 
   def set_morty
-    @morty = Morty.find(params[:camp_id])
+    @morty = Morty.find(params[:morty_id])
   end
 
   def set_user
