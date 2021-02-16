@@ -24,3 +24,7 @@
     </div>
   </div>
 </div>
+
+<%= simple_form_for [@morty, @reservation] do |f| %>
+  <%= f.button :submit, "Reservation", class: "btn btn-danger btn-lg"%>
+<% end %>

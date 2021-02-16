@@ -16,6 +16,7 @@ class MortiesController < ApplicationController
 
   def show
     @morty = Morty.find(params[:id])
+    @reservation = Reservation.new
   end
 
   private
