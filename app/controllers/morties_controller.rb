@@ -18,6 +18,11 @@ class MortiesController < ApplicationController
     @morty = Morty.find(params[:id])
   end
 
+  def index
+    raise
+    @morty = Morty.all
+  end
+
   private
 
   def morty_params
