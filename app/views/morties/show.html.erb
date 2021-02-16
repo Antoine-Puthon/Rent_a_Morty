@@ -1,22 +1,30 @@
 <div class="container">
-    <div class="row morty-description bg-light shadow p-3 mb-5 bg-white rounded">
-        <div class="col-sm-offset-2 col-sm-8">
-            <h1 class="header-shadow"><%= @morty.name %></h1>
-            <p>Description : <%= @morty.description %></p>
-            <p>State : <%= @morty.state %></p>
-            <p>Rarity : <%= @morty.rarity %></p>
-            <span><%= @morty.price %>$</span>
+    <div class="row card-large bg-light shadow p-5 mb-5 margin-top-80px bg-white d-flex justify-content-center ">
+        <div class="header-shadow"><%= @morty.name %></div>
+        <div class="col-sm-offset-2 col-sm-8 d-flex justify-content-between">
+          <div>
+            <span class="highlight">Description :</span>
+            <p><%= @morty.description %></p>
+            <span class="highlight">State :</span>
+            <p><%= @morty.state %></p>
+            <span class="highlight">Rarity :</span>
+            <p><%= @morty.rarity %></p>
+            <span class="pricing"><%= @morty.price %>$</span>
+          </div>
+          <div>
+            <%= image_tag @morty.photo , class: "img-morty"%>
+          </div>
         </div>
     </div>
-    <div class="w-50 text-center">
+    <div class="w-50 text-center m-auto">
       <%= simple_form_for [@morty, @reservation] do |f| %>
-        <%= f.button :submit, "Reservation", class: "btn btn-danger btn-lg btn-block"%>
+        <%= f.button :submit, "Book this Morty !", class: "btn btn-light btn-lg btn-block"%>
       <% end %>
     </div>
 
-    <div class="row morty-reviews bg-light shadow p-3 mb-5 bg-white rounded">
+    <div class="row card-large bg-light shadow p-5 margin-top-80px mb-5 bg-white d-flex justify-content-center">
+        <div class="header-shadow">Reviews</div>
         <div class="col-sm-offset-2 col-sm-8">
-          <h2 class="header-shadow">Reviews</h2>
           <% if @morty.reviews.empty? %>
             <p>Be the first to let a review</p>
           <% else %>
