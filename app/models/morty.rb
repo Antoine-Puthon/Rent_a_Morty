@@ -2,6 +2,7 @@ class Morty < ApplicationRecord
 
    RARITY = ["common", "rare", "epic"]
    STATE = ["hurt","relaxed","depressed","angry"]
+   PRICE = ["<50","50-100", "100-200",">200"]
 
   belongs_to :user
   has_many :reservations

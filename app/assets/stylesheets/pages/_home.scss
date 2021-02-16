@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+}
+
+body {
+  background-image: url("BackgroundUniverse.jpg");
+  color:white;
+  align-items: center;
+}
+
+h1{
+  color: #5AB01C;
+}
+
+// .home-form{
+//   width: 270px;
+//   display: inline-block;
+// }
+
+.home-btn{
+  align-items: center;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  &:hover {
+    color: #5AB01C;
+    border-color: #5AB01C;
+  }  
+}
+
+h2{
+  color: #5AB01C;
+}
+
+h3{
+  color: #5AB01C;
+}
+
+a{
+color: whitesmoke;
+
+}
