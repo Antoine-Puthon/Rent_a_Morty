@@ -41,3 +41,14 @@
 </div>
   
 
+<% if @reservation.pending? && @morty.user == current_user %>
+    <%= link_to "Validate", morty_path(@morty), method: :patch  %>
+<% elsif @reservation.pending?%>
+    <p>Ce Morty est réservé</p>
+<% elsif @reservation.confirmation?%>
+  <p>Ce morty vient d'être réservé</p>
+<% else %>
+  <%= simple_form_for [@morty, @reservation] do |f| %>
+  <%= f.button :submit, "Reservation", class: "btn btn-danger btn-lg"%>
+  <% end %>
+<% end %>

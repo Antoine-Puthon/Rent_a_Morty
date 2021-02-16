@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     @reservation.morty = @morty
     if @reservation.save
-
+      @reservation.pending!
       redirect_to reservation_path(@reservation)
     else
       redirect_to morty_path(@morty)
