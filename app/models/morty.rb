@@ -6,6 +6,7 @@ class Morty < ApplicationRecord
 
   belongs_to :user
   has_many :reservations
+  has_many :reviews
   validates :name, presence: true
   validates :price, presence: true
   validates :photo, presence: true

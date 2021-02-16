@@ -1,26 +1,54 @@
-<h1 class="text-center"><%= @morty.name %></h1>
-
 <div class="container">
-
-  <div class="row">
-    <div class ="photo-row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="wagoncard showmaincard">
-            <div class="wagoncard-detail">
-              <p>Price: <strong> <%= @morty.price %> </strong> </p>
-              <p>Actual state of Morty: <strong> <%= @morty.state %> </strong> </p>
-              <p>Rarity of Morty: <strong> <%= @morty.rarity %> </strong> </p>
-            </div>
+    <div class="row morty-description bg-light shadow p-3 mb-5 bg-white rounded">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h1 class="header-shadow"><%= @morty.name %></h1>
+            <p>Description : <%= @morty.description %></p>
+            <p>State : <%= @morty.state %></p>
+            <p>Rarity : <%= @morty.rarity %></p>
+            <span><%= @morty.price %>$</span>
         </div>
-      </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-
-      <p> <strong>Description:</strong> </p>
-      <p><%= @morty.description %></p>
+    <div class="w-50 text-center">
+      <%= simple_form_for [@morty, @reservation] do |f| %>
+        <%= f.button :submit, "Reservation", class: "btn btn-danger btn-lg btn-block"%>
+      <% end %>
     </div>
-  </div>
+
+    <div class="row morty-reviews bg-light shadow p-3 mb-5 bg-white rounded">
+        <div class="col-sm-offset-2 col-sm-8">
+          <h2 class="header-shadow">Reviews</h2>
+          <% if @morty.reviews.empty? %>
+            <p>Be the first to let a review</p>
+          <% else %>
+       <ul class="list-group">
+          <% @morty.reviews.each do |review| %>
+        <li>
+          <span class="badge badge-primary badge-pill">
+            <% counter = 0 %>
+            <% 5.times do %>
+              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+              <% counter += 1 %>
+            <% end %>
+          </span>
+          <%= review.description %>
+        </li>
+          <% end %>
+       </ul>
+          <% end %>
+
+        </div>
+    </div>
 </div>
+  
+
+<% if @reservation.pending? && @morty.user == current_user %>
+    <%= link_to "Validate", morty_path(@morty), method: :patch  %>
+<% elsif @reservation.pending?%>
+    <p>Ce Morty est réservé</p>
+<% elsif @reservation.confirmation?%>
+  <p>Ce morty vient d'être réservé</p>
+<% else %>
+  <%= simple_form_for [@morty, @reservation] do |f| %>
+  <%= f.button :submit, "Reservation", class: "btn btn-danger btn-lg"%>
+  <% end %>
+<% end %>
