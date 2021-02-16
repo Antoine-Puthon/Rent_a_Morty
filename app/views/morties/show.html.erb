@@ -1,0 +1,26 @@
+<h1 class="text-center"><%= @morty.name %></h1>
+
+<div class="container">
+
+  <div class="row">
+    <div class ="photo-row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="wagoncard showmaincard">
+            <div class="wagoncard-detail">
+              <p>Price: <strong> <%= @morty.price %> </strong> </p>
+              <p>Actual state of Morty: <strong> <%= @morty.state %> </strong> </p>
+              <p>Rarity of Morty: <strong> <%= @morty.rarity %> </strong> </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <p> <strong>Description:</strong> </p>
+      <p><%= @morty.description %></p>
+    </div>
+  </div>
+</div>
