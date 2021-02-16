@@ -16,7 +16,7 @@ class MortiesController < ApplicationController
 
   def show
     @morty = Morty.find(params[:id])
-    @reservation = Reservation.find_or_initialize_by(user: current_user, morty: @morty)
+    @reservation = Reservation.find_or_initialize_by(morty: @morty)
   end
 
   def update
