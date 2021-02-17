@@ -5,7 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   has_many :reservations
   has_many :morties
-  has_many :reviews
+  has_many :reviews, inverse_of: :user
 
   validates :first_name, presence: true
   validates :last_name, presence: true
