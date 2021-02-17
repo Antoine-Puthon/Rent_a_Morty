@@ -13,7 +13,7 @@
             <p><%= @morty.price  %></p>
           </div>
           <div>
-            <%= image_tag @morty.photo , class: "img-morty"%>
+            <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill , class: "img-morty"%>
           </div>
         </div>
     </div>
@@ -42,6 +42,7 @@
             <p>Be the first to let a review</p>
           <% else %>
        <ul class="list-group">
+
           <% @morty.reviews.each do |review| %>
         <li>
           <span class="badge badge-primary badge-pill">
@@ -60,6 +61,7 @@
         </div>
     </div>
 </div>
+
 
 
 

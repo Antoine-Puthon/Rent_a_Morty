@@ -2,5 +2,38 @@
     position: relative;
     border-radius: 60px;
     width: 80%;
-    margin: auto;
-} 
+    margin: auto; 
+}
+
+.card-small {
+  height: 320px;
+  width: 200px;
+  color: black;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 6px;
+  background-color: #f5f4ed;
+
+
+  & img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+    object-position: top;
+    object-fit: cover;
+  }
+  & p {
+    margin-bottom: 3px;
+  }
+  & h6 {
+    font-family: 'Creepster', cursive;
+    font-size: 24px;
+  }
+}
+
+.cards-all {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 48px;
+}

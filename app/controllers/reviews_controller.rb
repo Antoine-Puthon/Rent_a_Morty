@@ -2,11 +2,6 @@ class ReviewsController < ApplicationController
 before_action :set_morty, only: [:index, :new]
 before_action :set_review, only: [ :edit, :update ]
 
-
-  def index
-    @reviews = @morty.reviews
-  end
-
   def new
     @review = Review.new
   end
@@ -22,6 +17,7 @@ before_action :set_review, only: [ :edit, :update ]
         render 'morties/show'
     end
   end
+
 
   private
 

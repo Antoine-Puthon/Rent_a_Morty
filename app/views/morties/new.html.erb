@@ -10,7 +10,7 @@
     <%= f.input :state, label: "Choose between hurt relaxed depressed and angry", placeholder: "Angry" , collection: Morty::STATE  %>
     <%= f.input :rarity, label: "Choose between commun rare and epic", placeholder: "Epic" , collection: Morty::RARITY %>
     <br>
-    <%= f.input :photo, label: "Choose a nice picture for your Morty" %>
+    <%= f.input :photo, as: :file, label: "Choose a nice picture for your Morty" %>
     <br>
     <hr>
 
