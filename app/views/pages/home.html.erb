@@ -36,7 +36,7 @@
       <h4> Check our latest Morties : </h4>
       <div class="container">
         <div class="cards-all">
-          <% @morties.each.first(6) do |morty| %>
+          <% @morties.each do |morty| %>
             <%= link_to morty_path(morty) do%>
               <div class="card card-small" style="width: 18rem;">
                 <%= cl_image_tag morty.photo.key %>
