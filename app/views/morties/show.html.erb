@@ -29,6 +29,7 @@
             <p>Be the first to let a review</p>
           <% else %>
        <ul class="list-group">
+
           <% @morty.reviews.each do |review| %>
         <li>
           <span class="badge badge-primary badge-pill">
@@ -47,7 +48,7 @@
         </div>
     </div>
 </div>
-  
+
 
 <% if @reservation.pending? && @morty.user == current_user %>
     <%= link_to "Validate", morty_path(@morty), method: :patch  %>
