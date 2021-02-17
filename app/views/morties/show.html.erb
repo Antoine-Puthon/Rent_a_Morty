@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row card-large bg-light shadow p-5 mb-5 margin-top-80px bg-white d-flex justify-content-center ">
-        <div class="header-shadow"><%= @morty.name %></div>
+        <div class="header-shadow"><%= @morty.name %> </div>
         <div class="col-sm-offset-2 col-sm-8 d-flex justify-content-between">
           <div>
             <span class="highlight">Description :</span>
@@ -9,7 +9,8 @@
             <p><%= @morty.state %></p>
             <span class="highlight">Rarity :</span>
             <p><%= @morty.rarity %></p>
-            <span class="pricing"><%= @morty.price %>$</span>
+            <span class="highlight">Price : ($ per day)</span>
+            <p><%= @morty.price  %></p>
           </div>
           <div>
             <%= image_tag @morty.photo , class: "img-morty"%>
@@ -21,17 +22,17 @@
   <%= link_to "Validate", morty_path(@morty), method: :patch  %>
   <%= link_to "Reject", reservation_path(@reservation), method: :delete  %>
 <% elsif @reservation.pending?%>
-    <p>Ce Morty est en cours de réservation</p>
+    <p class="status-text">Ce Morty est en cours de réservation</p>
 <% elsif @reservation.confirmation?%>
-  <p>Ce morty vient d'être réservé</p>
+  <p class="status-text">Ce morty vient d'être réservé</p>
 <% elsif @morty.user == current_user  %>
-  <p>Vous êtes le propriétaire</p>
+  <p class="status-text">Vous êtes le propriétaire</p>
 <% else %>
-    <div class="w-50 text-center m-auto">
-      <%= simple_form_for [@morty, @reservation] do |f| %>
-        <%= f.button :submit, "Book this Morty !", class: "btn btn-light btn-lg btn-block"%>
-      <% end %>
-    </div>
+  <div class="w-50 text-center m-auto">
+    <%= simple_form_for [@morty, @reservation] do |f| %>
+      <%= f.button :submit, "Book this Morty !", class: "btn btn-light btn-lg btn-block"%>
+    <% end %>
+  </div>
 <% end %>
 
     <div class="row card-large bg-light shadow p-5 margin-top-80px mb-5 bg-white d-flex justify-content-center">
