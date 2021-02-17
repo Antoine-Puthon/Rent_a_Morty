@@ -7,7 +7,7 @@ class Morty < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
   has_many :reservations
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   validates :name, presence: true
   validates :price, presence: true
   validates :photo, presence: true
