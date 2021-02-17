@@ -1,4 +1,30 @@
 .card-large {
     position: relative;
     border-radius: 60px;
-} 
+}
+
+.card-small {
+  height: 320px;
+  width: 200px;
+  color: black;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 6px;
+
+  & img {
+    height: 200px;
+    width: 200px;
+    object-position: top;
+    object-fit: cover;
+  }
+  & p {
+    margin-bottom: 3px;
+  }
+
+}
+
+.cards-all {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 48px;
+}
