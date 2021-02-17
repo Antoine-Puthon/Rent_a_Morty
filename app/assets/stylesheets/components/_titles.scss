@@ -1,11 +1,13 @@
 .header-shadow {
     position: absolute;
-    top: -65px;
+    top: -90px;
     left: auto;
-    font-size: 80px;
+    font-size: 110px;
     color: rgb(244, 244, 244);
-    text-shadow: 1px 1px 2px #89B748;
+    text-shadow: 4px 8px 6px #597b14;
     font-family: 'Creepster', cursive;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }
 
 .highlight {
@@ -18,6 +20,11 @@
     font-size: 30px;
 }
 
+
+.banner-title {
+    font-size: 60px;
+}
+
 .header-shadow-small {
     position: absolute;
     top: -23px;
@@ -27,3 +34,4 @@
     text-shadow: 1px 1px 2px #89B748;
     font-family: 'Creepster', cursive;
 }
+
