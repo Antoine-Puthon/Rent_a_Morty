@@ -36,9 +36,9 @@
                 <%= image_tag morty.photo %>
                 <div class="card-body">
                   <h5 class="card-title header-shadow-small"><%= morty.name%> </h5>
-                  <p> <%= morty.state %></p>
-                  <p><%= morty.rarity %></p>
-                  <p><%= morty.price %></p>
+                  <p class="">State: <%= morty.state %></p>
+                  <p>Rarity: <%= morty.rarity %></p>
+                  <h6>Price: <%= morty.price %> $</h6>
                 </div>
               </div>
             <% end %>
