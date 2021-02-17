@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 .banner {
+  padding-top: 40px;
   color: white;
   text-align: center;
   height: 100vh;
@@ -11,8 +12,37 @@ body {
   background-size: cover;
 }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+form {
+  margin-bottom: 80px;
+}
+
 h1{
-  color: #5AB01C;
+  color: #82D006;
+}
+
+.home-headers h2 {
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 600;
+  color: white; 
+}
+
+.list-header {
+  font-family: 'Creepster', cursive;
+  font-size: 60px;
+  margin-bottom: 40px;
+  color: rgb(244, 244, 244);
+  text-shadow: 4px 8px 6px #597b14;
+  font-family: 'Creepster', cursive;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 // .home-form{
@@ -22,27 +52,32 @@ h1{
 
 .home-btn{
   align-items: center;
-  color: whitesmoke;
-  border: 1px solid whitesmoke;
-  border-radius: 10px;
+  color: black;
+  background-color: whitesmoke;
+  border: 6px solid black;
+  padding: 12px;
   &:hover {
-    color: #5AB01C;
-    border-color: #5AB01C;
+    color: whitesmoke;
+    background-color: #82D006;
   }  
 }
 
-h2{
-  color: #5AB01C;
+.home-btn-alternative {
+  align-items: center;
+  color: black;
+  background-color: whitesmoke;
+  border: 6px solid black;
+  padding: 12px;
+  font-size: 20px;
+  transition: all 0.2s ease-out;
+  &:hover {
+    font-size: 30px;
+
+  }
 }
 
-h3{
-  color: #5AB01C;
-}
-
-a{
-color: whitesmoke;
-
-
+.search_name  {
+  padding: 12px;
 }
 
 #search .form-group {
