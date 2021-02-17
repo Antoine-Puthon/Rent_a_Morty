@@ -34,7 +34,6 @@
       <h3> We have the solution: <%= link_to 'Share your Morty !', new_morty_path(@morty) %> </h3>
   <br>
       <h4> Check our latest Morties : </h4>
-      <div class="container">
         <div class="cards-all">
           <% @morties.each do |morty| %>
             <%= link_to morty_path(morty) do%>

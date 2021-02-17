@@ -2,7 +2,7 @@
     position: relative;
     border-radius: 60px;
     width: 80%;
-    margin: auto; 
+    margin: auto;
 }
 
 .card-small {
@@ -32,8 +32,3 @@
   }
 }
 
-.cards-all {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 48px;
-}
