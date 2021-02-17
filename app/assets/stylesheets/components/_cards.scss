@@ -1,55 +1,30 @@
 .card-large {
-  flex: 1 1 30%;
-  margin: 10px;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://i.imgur.com/sOMAnoq.jpg');
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  border-radius: 5px;
-  box-shadow: 1px 1px 20px #4E2093 ;
-  transition: 0.3s ease;
-  &:hover {
-    margin-top: 1px;
-  }
+    position: relative;
+    border-radius: 60px;
 }
 
-@media(max-width: 992px) {
-  .card {
-    flex: 1 1 40%;
-    height: 150px;
+.card-small {
+  height: 320px;
+  width: 200px;
+  color: black;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 6px;
+
+  & img {
+    height: 200px;
+    width: 200px;
+    object-position: top;
+    object-fit: cover;
   }
+  & p {
+    margin-bottom: 3px;
+  }
+
 }
 
-.card-large-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
-}
-.card-large-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-}
-.card-large-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  a {
-    text-decoration: none;
-  }
-  h2 {
-  font-size: 24px;
-}
-}
-
-.card-large i {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+.cards-all {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 48px;
 }

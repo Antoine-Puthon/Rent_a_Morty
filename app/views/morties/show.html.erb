@@ -12,7 +12,7 @@
             <span class="pricing"><%= @morty.price %>$</span>
           </div>
           <div>
-            <%= image_tag @morty.photo , class: "img-morty"%>
+            <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill , class: "img-morty"%>
           </div>
         </div>
     </div>
