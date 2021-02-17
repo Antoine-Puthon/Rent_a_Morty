@@ -7,9 +7,8 @@
 }
 
 body {
-  background-image: url("BackgroundUniverse.jpg");
-  color:white;
   align-items: center;
+  background-size: cover;
 }
 
 h1{
@@ -43,4 +42,13 @@ h3{
 a{
 color: whitesmoke;
 
+}
+
+#search .form-group {
+  margin-bottom: 0 !important;
+}
+
+#search {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
