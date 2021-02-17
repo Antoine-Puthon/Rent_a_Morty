@@ -7,3 +7,37 @@
   width: 50%;
   margin:auto;
 }
+
+.validation-button {
+  font-size:20px;
+  width:100px;
+  padding: 8px;
+  text-align: center;
+  color: #5AB01C;
+  border: 2px solid;
+  border-radius: 20px;
+  margin: 16px;
+  &:hover {
+    background: #5AB01C;
+    color: white;
+    border-color: #5AB01C;
+    text-decoration:none;
+  }  
+}
+
+.rejection-button {
+  font-size:20px;
+  width:100px;
+  padding: 8px;
+  text-align: center;
+  color: red;
+  border: 2px solid;
+  border-radius: 20px;
+  margin: 16px;
+  &:hover {
+    background: red;
+    color: white;
+    border-color: red;
+    text-decoration:none;
+  }  
+}
