@@ -32,7 +32,23 @@
       <h2> Lazy and hungover ? <%= link_to 'Scroll and find what we have !', morties_path(@morty) %> </h2>
       <h3> Do you need some money after a crazy night on Pluton ?</h3>
       <h3> We have the solution: <%= link_to 'Share your Morty !', new_morty_path(@morty) %> </h3>
-  </div>
-    <h4> Check our latest Morties : </h4>
-
+  <br>
+      <h4> Check our latest Morties : </h4>
+      <div class="container">
+        <div class="cards-all">
+          <% @morties.each do |morty| %>
+            <%= link_to morty_path(morty) do%>
+              <div class="card card-small" style="width: 18rem;">
+                <%= image_tag morty.photo %>
+                <div class="card-body">
+                  <h5 class="card-title header-shadow-small"><%= morty.name%> </h5>
+                  <p> <%= morty.state %></p>
+                  <p><%= morty.rarity %></p>
+                  <p><%= morty.price %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
 </div>  
