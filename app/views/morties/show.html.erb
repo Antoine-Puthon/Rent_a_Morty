@@ -19,8 +19,10 @@
     </div>
 
 <% if @reservation.pending? && @morty.user == current_user %>
-  <%= link_to "Validate", morty_path(@morty), method: :patch  %>
-  <%= link_to "Reject", reservation_path(@reservation), method: :delete  %>
+  <div class="d-flex justify-content-center">
+      <%= link_to "Validate", morty_path(@morty), class:"validation-button", method: :patch  %>
+      <%= link_to "Reject", reservation_path(@reservation), class:"rejection-button", method: :delete  %>
+  </div>
 <% elsif @reservation.pending?%>
     <p class="status-text">Ce Morty est en cours de réservation</p>
 <% elsif @reservation.confirmation?%>
