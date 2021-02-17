@@ -36,10 +36,10 @@
       <h4> Check our latest Morties : </h4>
       <div class="container">
         <div class="cards-all">
-          <% @morties.each do |morty| %>
+          <% @morties.each.first(6) do |morty| %>
             <%= link_to morty_path(morty) do%>
               <div class="card card-small" style="width: 18rem;">
-                <%= image_tag morty.photo %>
+                <%= cl_image_tag morty.photo.key %>
                 <div class="card-body">
                   <h5 class="card-title header-shadow-small"><%= morty.name%> </h5>
                   <p>State: <%= morty.state %></p>
