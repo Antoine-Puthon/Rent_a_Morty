@@ -28,9 +28,28 @@ class MortiesController < ApplicationController
   end
 
   def index
-    raise
-    @morty = Morty.all
+    @morties = Morty.all
+    if !(params[:request][:name].blank?)
+      sql_query = "morties.name @@ :name"
+      @morties = @morties.where(sql_query, name: "%#{params[:request][:name]}%")
+    end
+    if !(params[:request][:price].blank?)
+      min = params[:request][:price].split("-").first
+      max = params[:request][:price].split("-").last
+      sql_query = "morties.price >= :min AND morties.price < :max"
+      @morties = @morties.where(sql_query, min: min, max: max)
+    end
+    if !(params[:request][:state].blank?)
+      sql_query = "morties.state @@ :state"
+      @morties = @morties.where(sql_query, state: "%#{params[:request][:state]}%")
+    end
+    if !(params[:request][:rarity].blank?)
+      sql_query = "morties.rarity @@ :rarity"
+      @morties = @morties.where(sql_query, rarity: "%#{params[:request][:rarity]}%")
+    end
   end
+
+
 
   private
 

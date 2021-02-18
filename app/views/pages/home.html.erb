@@ -1,12 +1,12 @@
 <div class="container">
   <div class="banner">
     <h1 class="banner-title">The Morty you want is waiting for you pal !</h1>
-      <%= simple_form_for :search, url: morties_path, method: :get do |f| %>
+      <%= simple_form_for :request, url: morties_path, method: :get  do |f| %>
         <div id="search">
           <div class="row justify-content-center align-items-center">
             <div class="col-12 d-flex justify-content-center">
               <div class="row w-50">
-                <div class="col-9 px-0">
+                <div class="col-9 px-2 my-auto">
                   <%= f.input :name, placeholder: "Type this little brat's name", label: false %>
                 </div>
                 <div class="col-3 d-flex px-0">
@@ -32,9 +32,7 @@
       <div class="home-headers">
         <h2> Lazy and hungover ? <%= link_to morties_path(@morty), class: "home-btn-alternative" do %> <i class="fas fa-caret-down"></i> Scroll and find what we have ! <i class="fas fa-caret-down"></i><% end %></h2>
         <br>
-        <h2> Do you need some money after a crazy night on Pluton ?</h2>
-        <br>
-        <h2> We have the solution: <%= link_to new_morty_path(@morty), class: "home-btn-alternative" do %><i class="fas fa-dollar-sign"></i> Share your Morty ! <i class="fas fa-dollar-sign"></i><% end %> </h2>
+        <h2> Need money after a crazy night on Pluton ? <%= link_to new_morty_path(@morty), class: "home-btn-alternative" do %><i class="fas fa-dollar-sign"></i> Share your Morty ! <i class="fas fa-dollar-sign"></i><% end %></h2>
       </div>
   </div>
     <div class="last-morties">

@@ -2,7 +2,7 @@ class Morty < ApplicationRecord
 
    RARITY = ["common", "rare", "epic"]
    STATE = ["hurt","relaxed","depressed","angry"]
-   PRICE = ["<50","50-100", "100-200",">200"]
+   PRICE = ["0-50","50-100", "100-200","200-1000"]
 
   has_one_attached :photo
   belongs_to :user
