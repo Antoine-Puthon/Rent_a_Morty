@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="last-morties">
+    <h1 class="list-header">Hello <%= current_user.first_name %> <%= current_user.last_name %> </h1>
+    <div class="home-headers">
+      <% if @morties.empty?%>
+        <h2>Mmmm... You haven't added a morty yet... <%= link_to new_morty_path(@morty), class: "home-btn-alternative" do %>What are you waiting for ?<% end %></h2>
+        <br>
+        <img class="img" src="https://media.giphy.com/media/3o85xE7pIsVXSKnIQg/giphy.gif">
+      <% else %>
+        <h2>My Morty's :</h2>
+      <% end %>
+      
+    </div>
+    <div class="cards-all">
+    <% @morties.each do |morty| %>
+        <% last_reservation = morty.reservations.last %>
+        <% morty_display_image_condition = last_reservation.present? && last_reservation.confirmation? %>
+        <%= render 'shared/cards-small', morty: morty, morty_display_image_condition: morty_display_image_condition %>
+    <% end %>
+    </div>
+  </div>
+</div>

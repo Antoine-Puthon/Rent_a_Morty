@@ -1,10 +1,19 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
+
 .banner {
   padding-top: 40px;
   color: white;
   text-align: center;
   height: 100vh;
   align-items: center;
+}
+
+.last-morties {
+  height: 100vh;
+
 }
 
 body {
@@ -16,6 +25,12 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
+  }
+}
+
+a {
+  color: inherit;
+  &:hover {
     color: black;
   }
 }
@@ -31,7 +46,7 @@ h1{
 .home-headers h2 {
   font-family: 'Balsamiq Sans', cursive;
   font-weight: 600;
-  color: white; 
+  color: white;
 }
 
 .list-header {
@@ -59,7 +74,7 @@ h1{
   &:hover {
     color: whitesmoke;
     background-color: #82D006;
-  }  
+  }
 }
 
 .home-btn-alternative {
@@ -90,8 +105,9 @@ h1{
   margin-bottom: 40px;
 }
 
-.cards-all {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 48px;
+#booked-img-small {
+  position: absolute;
+  top: 201px;
+  left: 29px;
+  height: 105px;
 }

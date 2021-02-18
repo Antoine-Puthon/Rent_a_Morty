@@ -16,3 +16,44 @@
   outline-offset: 15px;
   text-shadow: 1px 1px 2px #427388;
 }
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.btn-black {
+
+  border-radius: 10px;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid black;
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  background-size: 300%;
+  transition: all 0.6s;
+}
+
+.btn-black {
+    color: green;
+    background-image: linear-gradient(-120deg, green 50%, white 50%);}
+
+
+.btn:hover {
+  color: #fff;
+  background-position: 100%;
+  transform: translateX(0.5rem);
+}
+
+.btn:active {
+  transform: translate(0.5rem, 0.5rem);
+  box-shadow: 0px 10px 20px -15px rgba(0, 0, 0, 0.75);
+}
