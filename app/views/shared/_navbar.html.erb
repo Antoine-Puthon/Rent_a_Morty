@@ -15,9 +15,9 @@
           <p class="nav-link"> Welcome <%= current_user.first_name %> ! You dickhead 🖕
           <% current_user.morties.find do |morty| %> 
               <% if morty.reservations.last.present? && morty.reservations.last.pending? %>
-                <%= link_to "🚨 You have a new reservation ! 🚨", morty_path(morty) %> 
+                <%= link_to "🚨 You have a new reservation ! 🚨", my_morties_path, class: "notification" %> 
               <% end %>
-            <% end %> 
+          <% end %> 
             </p>
         </li>
         <li class="nav-item dropdown">

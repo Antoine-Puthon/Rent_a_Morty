@@ -2,12 +2,18 @@
 html {
   scroll-behavior: smooth;
 }
+
 .banner {
   padding-top: 40px;
   color: white;
   text-align: center;
   height: 100vh;
   align-items: center;
+}
+
+.last-morties {
+  height: 100vh;
+
 }
 
 body {
@@ -19,6 +25,13 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
+  }
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: black;
   }
 }
 
@@ -90,12 +103,6 @@ h1{
 #search {
   margin-top: 40px;
   margin-bottom: 40px;
-}
-
-.cards-all {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 48px;
 }
 
 #booked-img-small {
