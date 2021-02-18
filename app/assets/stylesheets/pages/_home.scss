@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+html {
+  scroll-behavior: smooth;
+}
 .banner {
   padding-top: 40px;
   color: white;
@@ -16,7 +19,6 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none;
-    color: black;
   }
 }
 

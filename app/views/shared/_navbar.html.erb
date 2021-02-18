@@ -12,13 +12,13 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <p class="nav-link"> Welcome <%= current_user.first_name %> ! You dickhead 🖕 </p>
-        </li>
-         <li class="nav-item">
-          <p class="nav-link"> 
-          
-
-          </p>
+          <p class="nav-link"> Welcome <%= current_user.first_name %> ! You dickhead 🖕
+          <% current_user.morties.find do |morty| %> 
+              <% if morty.reservations.last.present? && morty.reservations.last.pending? %>
+                <%= link_to "🚨 You have a new reservation ! 🚨", morty_path(morty) %> 
+              <% end %>
+            <% end %> 
+            </p>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "RickAvatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
