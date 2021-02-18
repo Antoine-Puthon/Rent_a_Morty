@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="card-large row morty-description bg-light shadow p-3 mb-5 bg-white rounded">
+  <div class="row card-large bg-light shadow p-5 mb-5 margin-top-80px bg-white d-flex justify-content-center ">
     <h1 class="header-shadow">Add my Morty</h1>
-    <div class="col-sm-offset-2 col-sm-8">
+    <div class="mx-auto">
       <br>
       <%= simple_form_for @morty do |f| %>
         <%= f.input :name, placeholder: "Robot Morty" %>
@@ -13,10 +13,10 @@
         <%= f.input :photo, as: :file, label: "Choose a nice picture for your Morty" %>
         <br>
         <hr>
-        <%= f.button :submit, "Share my Morty", class: "btn btn-danger btn-lg"%>
-        <img class="img" src="https://static1.squarespace.com/static/528252b7e4b00150d03a4848/59a2354eebbd1a0623e0cefe/59a2359f6a49631dd5192334/1503802788601/RickAndMorty_RickAngryBurp1500.gif?format=400w">
+        <%= f.button :submit, "Share my Morty", class: "btn-black"%>
       <% end %>
     </div>
   </div>
 </div>
+
 
