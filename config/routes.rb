@@ -7,7 +7,7 @@ Rails.application.routes.draw do
      resources :reviews, only: [:new, :create]
   end
 
-  resources :reservations, only: [:show, :destroy]
+  resources :reservations, only: [:show, :destroy, :update]
   namespace :my do
     resources :morties, only: :index
   end

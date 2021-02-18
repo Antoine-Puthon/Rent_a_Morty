@@ -48,3 +48,14 @@
   position: absolute;
 
 }
+
+.fa-heart{
+  position: absolute;
+  top: 64px;
+  left: 780px;
+  font-size: 40px;
+  color: #5AB01C;
+  &:hover {
+    opacity: 0.8;
+  }
+}
