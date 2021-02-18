@@ -31,7 +31,7 @@ h1{
 .home-headers h2 {
   font-family: 'Balsamiq Sans', cursive;
   font-weight: 600;
-  color: white; 
+  color: white;
 }
 
 .list-header {
@@ -59,7 +59,7 @@ h1{
   &:hover {
     color: whitesmoke;
     background-color: #82D006;
-  }  
+  }
 }
 
 .home-btn-alternative {
@@ -94,4 +94,11 @@ h1{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 48px;
+}
+
+#booked-img-small {
+  position: absolute;
+  top: 201px;
+  left: 29px;
+  height: 105px;
 }

@@ -1,0 +1,23 @@
+<div class="cards-all">
+  <% @morties.each do |morty| %>
+
+  <% last_reservation = morty.reservations.last %>
+  <% morty_display_image_condition = last_reservation.present? && last_reservation.confirmation? %>
+
+    <%= link_to morty_path(morty) do %>
+
+      <div class="card card-small" style="width: 18rem;">
+        <%= image_tag "booked.png", alt: "booked", id: "booked-img-small" if morty_display_image_condition %>
+        <%= cl_image_tag morty.photo.key %>
+        <div class="card-body">
+          <h5 class="card-title header-shadow-small"><%= morty.name %> </h5>
+          <p>State: <%= morty.state %></p>
+          <p>Rarity: <%= morty.rarity %></p>
+          <h6>Price: <%= morty.price %> $</h6>
+        </div>
+      </div>
+
+    <% end %>
+
+  <% end %>
+</div>
