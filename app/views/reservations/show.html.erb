@@ -1,6 +1,23 @@
-<h1>Votre réservation est en attente</h1>
+<div class="container">
+  <h1 class="page-title">
 
+  </h1>
+  <h2 class="page-sub-title">Your reservation is good</h2>
+</div>
 
-
-<%= link_to "Back to Morty", morty_path(@reservation.morty), class: "btn btn-flat" %>
+<div class="card-container">
+  <div class="card">
+    <div class="front">
+      <h2 class="sub-title"></h2>
+      <h1 class="title">
+        Wubba Lubba Dub Dub!
+      </h1>
+      <img class="image" src="http://pre14.deviantart.net/0aef/th/pre/f/2014/015/2/f/look_at_that_thing_morty____rick_and_morty_by_kory226-d72a6ub.png" alt="" />
+    </div>
+    <div class="back">
+      <h3 class="synopsis">Recap</h3>
+      <p>You will be informed soon if the owner accept your demand</p>
+        <%= link_to "Back to Morty", morty_path(@reservation.morty), class: "btn btn-flat" %>
+    </div>
+  </div>
 
