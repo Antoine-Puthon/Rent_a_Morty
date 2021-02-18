@@ -30,15 +30,21 @@
         </div>
       <% end %>
       <div class="home-headers">
-        <h2> Lazy and hungover ? <%= link_to morties_path(@morty), class: "home-btn-alternative" do %> <i class="fas fa-caret-down"></i> Scroll and find what we have ! <i class="fas fa-caret-down"></i><% end %></h2>
+        <h2> Lazy and hungover ? <a href="#last-morties" class="home-btn-alternative"><i class="fas fa-caret-down"></i> Scroll and find what we have ! <i class="fas fa-caret-down"></i></a></h2>
         <br>
         <h2> Do you need some money after a crazy night on Pluton ?</h2>
         <br>
         <h2> We have the solution: <%= link_to new_morty_path(@morty), class: "home-btn-alternative" do %><i class="fas fa-dollar-sign"></i> Share your Morty ! <i class="fas fa-dollar-sign"></i><% end %> </h2>
       </div>
   </div>
-    <div class="last-morties">
-      <h2 class="list-header"> Check our latest Morties : </h4>
-        <%= render 'shared/cards-small' %>
-    </div>
+  <div class="last-morties" id="last-morties">
+    <h2 class="list-header"> Check our latest Morties : </h2>
+      <div class="cards-all">
+        <% @morties.each do |morty| %>
+          <% last_reservation = morty.reservations.last %>
+          <% morty_display_image_condition = last_reservation.present? && last_reservation.confirmation? %>
+          <%= render 'shared/cards-small', morty: morty, morty_display_image_condition: morty_display_image_condition %>
+        <% end %>
+      </div>
+  </div>
 </div>
