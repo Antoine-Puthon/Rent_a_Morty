@@ -21,7 +21,15 @@
               <%= cl_image_tag @morty.photo.key, height: 325, width: 150%>
             </div>
           </div>
+          <% if @reservation.user == current_user && (@reservation.favori.nil? || @reservation.favori == false) && @reservation.confirmation? %>
+            <%= link_to reservation_path(@morty.reservations.last), method: :patch do %>
+             <i class='far fa-heart'></i>
+             <% end %>
+             <% elsif  (@reservation.user == current_user && @reservation.favori == true)%>
+             <i class="fas fa-heart"></i>
+          <% end %>
     </div>
+
 
 <% if @reservation.pending? && @morty.user == current_user %>
   <div class="d-flex justify-content-center">
