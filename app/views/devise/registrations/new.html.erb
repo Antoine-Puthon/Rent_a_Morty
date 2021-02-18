@@ -23,6 +23,7 @@
     <%= f.input :password_confirmation,
     required: true,
     input_html: { autocomplete: "new-password" } %>
+     <%= f.input :photo, as: :file, label: "Choose a nice picture for you" %>
   </div>
 
   <div class="btn btn-success">
