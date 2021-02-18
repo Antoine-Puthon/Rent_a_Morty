@@ -1,22 +1,17 @@
-<div class="container">
-  <h1 class="page-title">
+<h1 class="h1-res">Votre réservation est en attente</h1>
 
-  </h1>
-  <h2 class="page-sub-title">Your reservation is good</h2>
-</div>
-
-<div class="card-container">
-  <div class="card">
+<div class="card-container-res">
+  <div class="card-res">
     <div class="front">
-      <h2 class="sub-title"></h2>
-      <h1 class="title">
+      <h1 class="title-res">
         Wubba Lubba Dub Dub!
+
       </h1>
-      <img class="image" src="http://pre14.deviantart.net/0aef/th/pre/f/2014/015/2/f/look_at_that_thing_morty____rick_and_morty_by_kory226-d72a6ub.png" alt="" />
+      <img class="image-res" src="http://pre14.deviantart.net/0aef/th/pre/f/2014/015/2/f/look_at_that_thing_morty____rick_and_morty_by_kory226-d72a6ub.png" alt="" />
     </div>
     <div class="back">
-      <h3 class="synopsis">Recap</h3>
-      <p>You will be informed soon if the owner accept your demand</p>
+      <h3 class="synopsis">First timer?</h3>
+      <p class="p-res">The actual Rick owner will reach to you soon.</p>
         <%= link_to "Back to Morty", morty_path(@reservation.morty), class: "btn btn-flat" %>
     </div>
   </div>
