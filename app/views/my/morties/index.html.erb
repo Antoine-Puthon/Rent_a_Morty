@@ -18,5 +18,19 @@
         <%= render 'shared/cards-small', morty: morty, morty_display_image_condition: morty_display_image_condition %>
     <% end %>
     </div>
+    
+    <% if !current_user.reservations.empty? %>
+      <h1 class="list-header">Your reservations</h1>
+      <div class="home-headers">
+        <div class="cards-all">
+          <% current_user.confirmations.each do |confirmation| %>
+           <% last_reservation = confirmation.morty.reservations.last %>
+           <% morty_display_image_condition = last_reservation.present? && last_reservation.confirmation? %>
+           <%= render 'shared/cards-small', morty: confirmation.morty, morty_display_image_condition: morty_display_image_condition %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    
   </div>
 </div>
