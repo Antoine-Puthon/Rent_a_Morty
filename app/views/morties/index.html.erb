@@ -1,17 +1,9 @@
 <div class="container">
   <div class="cards-all">
           <% @morties.each do |morty| %>
-            <%= link_to morty_path(morty) do%>
-              <div class="card card-small" style="width: 18rem;">
-                <%= cl_image_tag morty.photo.key %>
-                <div class="card-body">
-                  <h5 class="card-title header-shadow-small"><%= morty.name%> </h5>
-                  <p>State: <%= morty.state %></p>
-                  <p>Rarity: <%= morty.rarity %></p>
-                  <h6>Price: <%= morty.price %> $</h6>
-                </div>
-              </div>
-            <% end %>
+            <% last_reservation = morty.reservations.last %>
+            <% morty_display_image_condition = last_reservation.present? && last_reservation.confirmation? %>
+            <%= render 'shared/cards-small', morty: morty, morty_display_image_condition: morty_display_image_condition %>
           <% end %>
         </div>
 </div>
