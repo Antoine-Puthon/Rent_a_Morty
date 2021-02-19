@@ -37,15 +37,15 @@
       <%= link_to "Reject", reservation_path(@reservation), class:"rejection-button", method: :delete  %>
   </div>
 <% elsif @reservation.pending?%>
-    <p class="status-text">Ce Morty est en cours de réservation</p>
+    <p class="status-text"> Your booking is pending confirmation</p>
 <% elsif @reservation.confirmation?%>
   <p class="status-text"><%= @morty.name %> is already Booked</p>
 <% elsif @morty.user == current_user  %>
-  <p class="status-text">Vous êtes le propriétaire</p>
+  <p class="status-text">You are the owner of this Morty</p>
 <% else %>
   <div class="w-50 text-center m-auto">
     <%= simple_form_for [@morty, @reservation] do |f| %>
-      <%= f.button :submit, "Book this Morty !", class: "btn btn-light btn-lg btn-block"%>
+      <%= f.button :submit, "Book this Morty !", class: "btn btn-black"%>
     <% end %>
   </div>
 <% end %>
