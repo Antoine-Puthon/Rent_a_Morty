@@ -27,6 +27,11 @@
     font-family: 'Creepster', cursive;
     font-size: 24px;
   }
+  &:hover {
+    -webkit-transform: scale(1.1) rotate(4deg);
+    -ms-transform: scale(1.1) rotate(4deg);
+    transform: scale(1.1) rotate(4deg);  
+  }
 }
 
 .cards-all {

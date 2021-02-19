@@ -1,55 +1,56 @@
 <div class="container">
-    <div class="row card-large bg-light shadow p-5 mb-5 margin-top-80px bg-white d-flex justify-content-center ">
-        <div class="header-shadow"><%= @morty.name %> </div>
-          <div class="col-sm-offset-2 col-sm-8 d-flex justify-content-between">
-            <% if @reservation.confirmation? %>
-              <%= image_tag "booked.png", alt: "booked", id: "booked-img" %>
-            <% end %>
-            <div>
-              <span class="highlight">Description :</span>
-              <p><%= @morty.description %></p>
-              <span class="highlight">State :</span>
-              <p><%= @morty.state %></p>
-              <span class="highlight">Rarity :</span>
-              <p><%= @morty.rarity %></p>
-              <span class="highlight">Owner :</span>
-              <p><%= @morty.user.full_name %></p>
-              <span class="highlight">Price : ($ per day)</span>
-              <p><%= @morty.price  %></p>
-            </div>
-            <div>
-              <%= cl_image_tag @morty.photo.key, height: 325, width: 150%>
-            </div>
-          </div>
-          <% if @reservation.user == current_user && (@reservation.favori.nil? || @reservation.favori == false) && @reservation.confirmation? %>
-            <%= link_to reservation_path(@morty.reservations.last), method: :patch do %>
-             <i class='far fa-heart'></i>
-             <% end %>
-             <% elsif  (@reservation.user == current_user && @reservation.favori == true)%>
-             <i class="fas fa-heart"></i>
-          <% end %>
+  <div class="row card-large bg-light shadow p-5 mb-5 margin-top-80px bg-white d-flex justify-content-center ">
+    <div class="header-shadow"><%= @morty.name %> </div>
+    <div class="col-sm-offset-2 col-sm-8 d-flex justify-content-between">
+      <% if @reservation.confirmation? %>
+      <%= image_tag "booked.png", alt: "booked", id: "booked-img" %>
+      <% end %>
+      <div>
+        <font size="+1">
+          <span class="highlight"><i>Description :</i></span>
+          <p><i><%= @morty.description.capitalize %></i></p>
+          <span class="highlight"><i>State :</i></span>
+          <p><i><%= @morty.state.capitalize %></i></p>
+          <span class="highlight"><i>Rarity :</i></span>
+          <p><i><%= @morty.rarity.capitalize %></i></p>
+          <span class="highlight"><i>Owner :</i></span>
+          <p> <i><%= @morty.user.full_name %></i></p>
+          <span class="highlight"><i>Price : (per day)</i></span>
+          <p style="padding-left:40px"><strong><font size="+5"><%= @morty.price%>$</strong></font></p>
+        </font>
+      </div>
+      <div>
+        <%= cl_image_tag @morty.photo.key, height: 325, width: 150%>
+      </div>
     </div>
+    <% if @reservation.user == current_user && (@reservation.favori.nil? || @reservation.favori == false) && @reservation.confirmation? %>
+    <%= link_to reservation_path(@morty.reservations.last), method: :patch do %>
+    <i class='far fa-heart'></i>
+    <% end %>
+    <% elsif  (@reservation.user == current_user && @reservation.favori == true)%>
+    <i class="fas fa-heart"></i>
+    <% end %>
+  </div>
 
 
-<% if @reservation.pending? && @morty.user == current_user %>
+  <% if @reservation.pending? && @morty.user == current_user %>
   <div class="d-flex justify-content-center">
-      <%= link_to "Validate", morty_path(@morty), class:"validation-button", method: :patch  %>
-      <%= link_to "Reject", reservation_path(@reservation), class:"rejection-button", method: :delete  %>
+    <%= link_to "Validate", morty_path(@morty), class:"validation-button", method: :patch  %>
+    <%= link_to "Reject", reservation_path(@reservation), class:"rejection-button", method: :delete  %>
   </div>
 <% elsif @reservation.pending?%>
-    <p class="status-text">Ce Morty est en cours de réservation</p>
+    <p class="status-text"> Your booking is pending confirmation</p>
 <% elsif @reservation.confirmation?%>
   <p class="status-text"><%= @morty.name %> is already Booked</p>
 <% elsif @morty.user == current_user  %>
-  <p class="status-text">Vous êtes le propriétaire</p>
+  <p class="status-text">You are the owner of this Morty</p>
 <% else %>
   <div class="w-50 text-center m-auto">
     <%= simple_form_for [@morty, @reservation] do |f| %>
-      <%= f.button :submit, "Book this Morty !", class: "btn btn-light btn-lg btn-block"%>
+      <%= f.button :submit, "Book this Morty !", class: "btn btn-black"%>
     <% end %>
   </div>
-<% end %>
-
+  <% end %>
     <div class="row card-large bg-light shadow p-5 margin-top-80px mb-5 bg-white d-flex justify-content-center text-center">
         <div class="header-shadow">Reviews</div>
         <div class="col-sm-offset-2 col-sm-8 d-flex justify-content-between">
