@@ -8,7 +8,7 @@
       <div>
         <font size="+1">
           <span class="highlight"><i>Description :</i></span>
-          <p><i><%= @morty.description %></i></p>
+          <p><i><%= @morty.description.capitalize %></i></p>
           <span class="highlight"><i>State :</i></span>
           <p><i><%= @morty.state.capitalize %></i></p>
           <span class="highlight"><i>Rarity :</i></span>
@@ -16,7 +16,7 @@
           <span class="highlight"><i>Owner :</i></span>
           <p> <i><%= @morty.user.full_name %></i></p>
           <span class="highlight"><i>Price : (per day)</i></span>
-          <p><strong><font size="+2"><%= @morty.price%>$</strong></font></p>
+          <p style="padding-left:40px"><strong><font size="+5"><%= @morty.price%>$</strong></font></p>
         </font>
       </div>
       <div>
@@ -57,7 +57,7 @@
     <div class="col-sm-offset-2 col-sm-8">
       <% if @morty.reviews.empty? %>
       <font size="+1">
-        <p class="text-center">Be the first to let a review</p>
+        <p class="text-center" style="padding-top: 30px">Be the first to let a review</p>
       </font>
       <% else %>
       <ul class="list-group">
