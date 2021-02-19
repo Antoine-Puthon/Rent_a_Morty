@@ -30,11 +30,28 @@
         </div>
       <% end %>
       <div class="home-headers">
-        <h2> Lazy and hungover ? <a href="#last-morties" class="home-btn-alternative"><i class="fas fa-caret-down"></i> Scroll and find what we have ! <i class="fas fa-caret-down"></i></a></h2>
+        <h2> Lazy and hungover ? <a href="#last-morties" class="home-btn-alternative " ><i class="fas fa-caret-down"></i> Scroll and find what we have ! <i class="fas fa-caret-down"></i></a></h2>
         <br>
         <h2> Need money after a crazy night on Pluton ? <%= link_to new_morty_path(@morty), class: "home-btn-alternative" do %><i class="fas fa-dollar-sign"></i> Share your Morty ! <i class="fas fa-dollar-sign"></i><% end %></h2>
       </div>
-      <img src="https://static.wikia.nocookie.net/rickandmorty/images/4/41/Pickle_rick_transparent_edgetrimmed.png" alt="Rick and Morty" class="img-background">
+    <img src="https://static.wikia.nocookie.net/rickandmorty/images/4/41/Pickle_rick_transparent_edgetrimmed.png" alt="Rick and Morty" class="img-background" id="pickle-rick">
+    <script>
+    //sets a random absolute position to a html element; receives the html element
+    function moveElmRand(elm){
+    elm.style.position ='absolute';
+    elm.style.top = Math.floor(Math.random()*90+5)+'%';
+    elm.style.left = Math.floor(Math.random()*90+5)+'%';
+    }
+
+    //get the #btn_test
+    var btn_test = document.querySelector('#pickle-rick');
+
+    //register to call moveElmRand() on mouseenter event to #btn_test
+    btn_test.addEventListener('mouseenter', function(e){ moveElmRand(e.target);});
+
+    //register click to #btn_test
+    btn_test.addEventListener('click', function(e){ alert('PICKLE RICK DICKHEAD !!!');});
+    </script>
   </div>
   <div class="last-morties" id="last-morties">
     <h2 class="list-header"> Check our latest Morties : </h2>
