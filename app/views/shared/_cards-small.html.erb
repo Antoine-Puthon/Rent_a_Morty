@@ -3,7 +3,7 @@
     <div class="card card-small">
       <%= image_tag "booked.png", alt: "booked", id: "booked-img-small" if morty_display_image_condition %>
       <%= cl_image_tag morty.photo.key %>
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-title header-shadow-small"><%= morty.name %> </h5>
         <p>State: <%= morty.state %></p>
         <p>Rarity: <%= morty.rarity %></p>
