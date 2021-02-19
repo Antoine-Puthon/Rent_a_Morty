@@ -51,32 +51,44 @@
     <% end %>
   </div>
   <% end %>
-
-  <div class="row card-large bg-light shadow p-5 margin-top-80px mb-5 bg-white d-flex justify-content-center">
-    <div class="header-shadow">Reviews</div>
-    <div class="col-sm-offset-2 col-sm-8">
-      <% if @morty.reviews.empty? %>
-      <font size="+1">
-        <p class="text-center" style="padding-top: 30px">Be the first to let a review</p>
-      </font>
-      <% else %>
-      <ul class="list-group">
-        <% @morty.reviews.each do |review| %>
-        <li>
-          <span class="badge badge-primary badge-pill">
-            <% counter = 0 %>
-            <% 5.times do %>
-            <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-            <% counter += 1 %>
-            <% end %>
-          </span>
-          <%= review.description %>
-        </li>
+    <div class="row card-large bg-light shadow p-5 margin-top-80px mb-5 bg-white d-flex justify-content-center text-center">
+        <div class="header-shadow">Reviews</div>
+        <div class="col-sm-offset-2 col-sm-8 d-flex justify-content-between">
+          <% if @morty.reviews.empty? %>
+            <p>Be the first to let a review</p>
+          <% else %>
+             <ul class="list-group">
+                <% @morty.reviews.each do |review| %>
+              <li>
+                <div class="review-content my-2">
+                  <span class="badge badge-primary badge-pill">
+                    <% counter = 0 %>
+                    <% 5.times do %>
+                      <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                      <% counter += 1 %>
+                    <% end %>
+                  </span>
+                  <%= review.description %> - written by  <i> <%= review.user.first_name%> <%= review.user.last_name%>  </i>
+                </div>
+              </li>
+                <% end %>
+             </ul>
+          <% end %>
+        </div>
+    </div>
+    <div>
+      <% if @reservation.present? && @reservation.user == current_user && @reservation.confirmation? %>
+        <% if @morty.reviews.present?%>
+          <% review_current_user = @morty.reviews.find do |review| review.user == current_user %>
+          <% end %>
+            <% if review_current_user.nil? %>
+              <%= link_to "Add a Review", new_morty_review_path(@morty), class: "btn btn-black"  %>
+              <% end %>
+        <% else %>
+         <%= link_to "Add a Review", new_morty_review_path(@morty), class: "btn btn-black"  %>
         <% end %>
-      </ul>
       <% end %>
     </div>
-  </div>
 </div>
 
 
