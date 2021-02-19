@@ -1,6 +1,6 @@
 <div class="container">
   <div class="banner">
-    <h1 class="banner-title">The Morty you want is waiting for you pal !</h1>
+    <h1 class="banner-title">Rent a Morty <img src="https://media0.giphy.com/media/2cehgMhmxSp0LFKAws/source.gif" alt=""></h1>
       <%= simple_form_for :request, url: morties_path, method: :get  do |f| %>
         <div id="search">
           <div class="row justify-content-center align-items-center">
@@ -34,11 +34,12 @@
         <br>
         <h2> Need money after a crazy night on Pluton ? <%= link_to new_morty_path(@morty), class: "home-btn-alternative" do %><i class="fas fa-dollar-sign"></i> Share your Morty ! <i class="fas fa-dollar-sign"></i><% end %></h2>
       </div>
+      <img src="https://static.wikia.nocookie.net/rickandmorty/images/4/41/Pickle_rick_transparent_edgetrimmed.png" alt="Rick and Morty" class="img-background">
   </div>
   <div class="last-morties" id="last-morties">
     <h2 class="list-header"> Check our latest Morties : </h2>
       <div class="cards-all">
-        <% @morties.each do |morty| %>
+        <% @morties.last(6).each do |morty| %>
           <% last_reservation = morty.reservations.last %>
           <% morty_display_image_condition = last_reservation.present? && last_reservation.confirmation? %>
           <%= render 'shared/cards-small', morty: morty, morty_display_image_condition: morty_display_image_condition %>
